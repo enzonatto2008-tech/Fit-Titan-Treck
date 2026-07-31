@@ -153,3 +153,29 @@ export interface ChatMessage {
   text: string
   timestamp: string
 }
+
+export interface Recipe {
+  id: string
+  name: string
+  mealType: string
+  description: string
+  ingredients: string[]
+  steps: string[]
+  prepTimeMinutes: number
+  calories: number
+  proteinG: number
+  carbsG: number
+  fatG: number
+  fiberG: number
+  servings: number
+  isFavorite?: boolean
+  isCustom?: boolean
+}
+
+export interface Achievement {
+  id: string
+  name: string
+  description: string
+  icon: string
+  unlocked: boolean
+}

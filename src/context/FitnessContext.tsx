@@ -12,7 +12,9 @@ import {
   SleepLog,
   MealCategory,
 } from '@/types/fitness'
-import { DEFAULT_FOODS, DEFAULT_EXERCISES, INITIAL_USER, INITIAL_ROUTINES } from '@/data/mock-data'
+import { INITIAL_USER, INITIAL_ROUTINES } from '@/data/mock-data'
+import { EXPANDED_FOODS as DEFAULT_FOODS } from '@/data/foods-database'
+import { EXPANDED_EXERCISES as DEFAULT_EXERCISES } from '@/data/exercises-database'
 
 export interface FitnessContextType {
   user: UserProfile
@@ -58,7 +60,9 @@ export const FitnessProvider = ({ children }: { children: ReactNode }) => {
 
   const [foods, setFoods] = useState<FoodItem[]>(() => {
     const saved = localStorage.getItem('fit_foods')
-    return saved ? JSON.parse(saved) : DEFAULT_FOODS
+    const parsed = saved ? JSON.parse(saved) : null
+    if (parsed && parsed.length >= 50) return parsed
+    return DEFAULT_FOODS
   })
 
   const [mealLogs, setMealLogs] = useState<MealItemLog[]>(() => {
@@ -246,6 +250,14 @@ export const FitnessProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     localStorage.setItem('fit_sleep', JSON.stringify(sleepLogs))
   }, [sleepLogs])
+
+  useEffect(() => {
+    localStorage.setItem('fit_foods', JSON.stringify(foods))
+  }, [foods])
+
+  useEffect(() => {
+    localStorage.setItem('fit_photos', JSON.stringify(photos))
+  }, [photos])
 
   const login = (email: string) => {
     setUser((prev) => ({ ...prev, email }))

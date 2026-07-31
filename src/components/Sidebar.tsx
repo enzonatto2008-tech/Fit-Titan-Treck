@@ -10,6 +10,11 @@ import {
   Droplet,
   Moon,
   History,
+  ChefHat,
+  Camera,
+  BarChart3,
+  Calculator,
+  Download,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import logoImg from '@/assets/d3267126-5516-47b1-a617-7fde37c12841-f18a4.jpeg'
@@ -17,13 +22,18 @@ import logoImg from '@/assets/d3267126-5516-47b1-a617-7fde37c12841-f18a4.jpeg'
 const navItems = [
   { label: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
   { label: 'Refeições', path: '/refeicoes', icon: Utensils },
+  { label: 'Receitas', path: '/receitas', icon: ChefHat },
   { label: 'Treinos', path: '/treinos', icon: Dumbbell },
   { label: 'Histórico', path: '/treinos/historico', icon: History },
   { label: 'Peso', path: '/evolucao/peso', icon: LineChart },
+  { label: 'Fotos', path: '/evolucao/fotos', icon: Camera },
   { label: 'Água', path: '/agua', icon: Droplet },
   { label: 'Sono', path: '/sono', icon: Moon },
   { label: 'Metas', path: '/metas', icon: Target },
+  { label: 'Estatísticas', path: '/estatisticas', icon: BarChart3 },
+  { label: 'Calculadoras', path: '/calculadoras', icon: Calculator },
   { label: 'Relatórios', path: '/relatorios', icon: FileText },
+  { label: 'Exportar', path: '/exportar', icon: Download },
   { label: 'AI Coach', path: '/ai', icon: Sparkles, badge: 'IA' },
 ]
 
