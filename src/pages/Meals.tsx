@@ -42,7 +42,7 @@ export default function Meals() {
 
         {/* Daily Summary Bar */}
         <div className="flex gap-4 p-3 rounded-xl bg-card border border-border text-xs">
-          <div className="flex items-center gap-1.5 font-bold text-emerald-500">
+          <div className="flex items-center gap-1.5 font-bold text-violet-500">
             <Flame className="h-4 w-4" /> {totalCalories} kcal
           </div>
           <div className="text-muted-foreground">
@@ -100,12 +100,12 @@ export default function Meals() {
                           </p>
                         </div>
                         <div className="flex items-center gap-3">
-                          <span className="font-bold text-emerald-500">{item.calories} kcal</span>
+                          <span className="font-bold text-violet-500">{item.calories} kcal</span>
                           <Button
                             size="icon"
                             variant="ghost"
                             onClick={() => removeMealItem(item.id)}
-                            className="h-7 w-7 text-muted-foreground hover:text-red-500"
+                            className="h-7 w-7 text-muted-foreground hover:text-destructive"
                           >
                             <Trash2 className="h-3.5 w-3.5" />
                           </Button>

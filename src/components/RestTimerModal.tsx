@@ -24,15 +24,15 @@ export function RestTimerModal({
   }
 
   return (
-    <div className="fixed bottom-20 right-4 z-50 bg-card border border-emerald-500/30 p-4 rounded-xl shadow-2xl flex items-center gap-4 animate-slide-up">
-      <div className="relative flex items-center justify-center h-14 w-14 rounded-full bg-accent text-emerald-500 font-bold text-sm">
+    <div className="fixed bottom-20 right-4 z-50 bg-card border border-violet-500/30 p-4 rounded-xl shadow-2xl flex items-center gap-4 animate-slide-up">
+      <div className="relative flex items-center justify-center h-14 w-14 rounded-full bg-accent text-violet-500 font-bold text-sm">
         <svg className="absolute inset-0 h-full w-full -rotate-90">
           <circle cx="28" cy="28" r="24" className="stroke-muted fill-none stroke-2" />
           <circle
             cx="28"
             cy="28"
             r="24"
-            className="stroke-emerald-500 fill-none stroke-2 transition-all duration-300"
+            className="stroke-violet-500 fill-none stroke-2 transition-all duration-300"
             strokeDasharray={150}
             strokeDashoffset={150 - (150 * progressPercent) / 100}
           />
@@ -53,7 +53,7 @@ export function RestTimerModal({
             onClick={onStop}
             className="h-6 text-[10px] text-red-400 hover:text-red-300"
           >
-            <Square className="h-3 w-3" /> Pular
+            <Square className="h-3 w-3" /> Parar
           </Button>
         </div>
       </div>

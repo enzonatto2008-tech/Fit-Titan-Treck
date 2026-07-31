@@ -93,7 +93,7 @@ export function AddFoodModal({ category, trigger }: AddFoodModalProps) {
       <DialogContent className="max-w-md max-h-[85vh] flex flex-col p-6">
         <DialogHeader>
           <DialogTitle className="text-lg font-bold">
-            Adicionar Alimento em <span className="capitalize text-emerald-500">{category}</span>
+            Adicionar Alimento em <span className="capitalize text-violet-500">{category}</span>
           </DialogTitle>
         </DialogHeader>
 
@@ -116,7 +116,7 @@ export function AddFoodModal({ category, trigger }: AddFoodModalProps) {
                   onClick={() => handleSelectFood(food)}
                   className={`p-2.5 rounded-md cursor-pointer transition text-xs flex justify-between items-center ${
                     selectedFood?.id === food.id
-                      ? 'bg-emerald-500/20 border border-emerald-500'
+                      ? 'bg-violet-500/20 border border-violet-500'
                       : 'hover:bg-accent'
                   }`}
                 >
@@ -136,7 +136,7 @@ export function AddFoodModal({ category, trigger }: AddFoodModalProps) {
               <div className="p-3 bg-accent/50 rounded-lg space-y-3">
                 <div className="flex justify-between items-center text-xs">
                   <span className="font-semibold">{selectedFood.name}</span>
-                  <span className="text-emerald-500 font-bold">
+                  <span className="text-violet-500 font-bold">
                     {Math.round((selectedFood.calories * quantity) / selectedFood.servingSizeG)}{' '}
                     kcal
                   </span>
@@ -152,7 +152,7 @@ export function AddFoodModal({ category, trigger }: AddFoodModalProps) {
                 </div>
                 <Button
                   onClick={handleAddMeal}
-                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white size-sm"
+                  className="w-full bg-violet-600 hover:bg-violet-700 text-white size-sm"
                 >
                   Confirmar Adição
                 </Button>
@@ -219,7 +219,7 @@ export function AddFoodModal({ category, trigger }: AddFoodModalProps) {
               >
                 Voltar
               </Button>
-              <Button type="submit" size="sm" className="w-1/2 bg-emerald-600 text-white">
+              <Button type="submit" size="sm" className="w-1/2 bg-violet-600 text-white">
                 Salvar e Usar
               </Button>
             </div>

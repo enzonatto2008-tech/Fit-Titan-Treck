@@ -68,7 +68,7 @@ export default function Goals() {
           </div>
         </div>
 
-        <Button onClick={handleSave} className="w-full bg-emerald-600 text-white gap-2 text-xs">
+        <Button onClick={handleSave} className="w-full bg-violet-600 text-white gap-2 text-xs">
           <Check className="h-4 w-4" /> Salvar Novas Metas
         </Button>
       </Card>

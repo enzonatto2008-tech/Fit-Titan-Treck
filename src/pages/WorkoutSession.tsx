@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams, useNavigate } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
 import { useFitness } from '@/hooks/use-fitness'
 import { useRestTimer } from '@/hooks/use-rest-timer'
 import { RestTimerModal } from '@/components/RestTimerModal'
@@ -75,13 +75,13 @@ export default function WorkoutSession() {
         </Button>
         <div className="text-center">
           <h1 className="text-lg font-bold">{routine.name}</h1>
-          <span className="text-xs text-emerald-500 font-mono font-bold">
+          <span className="text-xs text-violet-500 font-mono font-bold">
             Tempo: {formatElapsedTime(elapsedSeconds)}
           </span>
         </div>
         <Button
           onClick={handleFinish}
-          className="bg-emerald-600 hover:bg-emerald-700 text-white size-sm gap-1 text-xs"
+          className="bg-violet-600 hover:bg-violet-700 text-white size-sm gap-1 text-xs"
         >
           <CheckCircle2 className="h-4 w-4" /> Finalizar
         </Button>
@@ -120,7 +120,7 @@ export default function WorkoutSession() {
                       <Checkbox
                         checked={isChecked}
                         onCheckedChange={() => toggleSet(key, ex.restSeconds)}
-                        className="h-5 w-5 border-emerald-500"
+                        className="h-5 w-5 border-violet-500"
                       />
                     </div>
                   </div>

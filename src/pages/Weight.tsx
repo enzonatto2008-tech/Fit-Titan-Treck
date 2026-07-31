@@ -73,7 +73,7 @@ export default function Weight() {
             </div>
             <Button
               type="submit"
-              className="w-full bg-emerald-600 hover:bg-emerald-700 text-white gap-2 text-xs"
+              className="w-full bg-violet-600 hover:bg-violet-700 text-white gap-2 text-xs"
             >
               <Plus className="h-4 w-4" /> Registrar Peso
             </Button>
@@ -100,7 +100,7 @@ export default function Weight() {
                   .map((e) => (
                     <tr key={e.id}>
                       <td className="py-2.5 font-medium">{e.date}</td>
-                      <td className="py-2.5 font-bold text-emerald-500">{e.weightKg} kg</td>
+                      <td className="py-2.5 font-bold text-violet-500">{e.weightKg} kg</td>
                       <td className="py-2.5">
                         {e.bodyFatPercentage ? `${e.bodyFatPercentage}%` : '-'}
                       </td>
@@ -110,7 +110,7 @@ export default function Weight() {
                           size="icon"
                           variant="ghost"
                           onClick={() => removeWeightEntry(e.id)}
-                          className="h-6 w-6 text-muted-foreground hover:text-red-500"
+                          className="h-6 w-6 text-muted-foreground hover:text-destructive"
                         >
                           <Trash2 className="h-3 w-3" />
                         </Button>

@@ -55,7 +55,7 @@ export default function Photos() {
               placeholder="Ex: Físico em jejum de 30 dias"
             />
           </div>
-          <Button type="submit" className="bg-emerald-600 text-white gap-2 text-xs">
+          <Button type="submit" className="bg-violet-600 text-white gap-2 text-xs">
             <Plus className="h-4 w-4" /> Adicionar Foto
           </Button>
         </form>

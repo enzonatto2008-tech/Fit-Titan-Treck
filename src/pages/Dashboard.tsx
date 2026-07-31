@@ -32,7 +32,7 @@ export default function Dashboard() {
         <Link to="/ai">
           <Button
             size="sm"
-            className="bg-emerald-600 hover:bg-emerald-700 text-white gap-2 text-xs shadow-md"
+            className="bg-violet-600 hover:bg-violet-700 text-white gap-2 text-xs shadow-md"
           >
             <Sparkles className="h-4 w-4" /> Consultar IA Coach
           </Button>
@@ -53,7 +53,7 @@ export default function Dashboard() {
           current={todayWater}
           target={user.waterTargetMl}
           unit="ml"
-          colorClass="text-blue-500"
+          colorClass="text-purple-500"
           icon={<Droplet className="h-4 w-4" />}
         />
         <StatCard
@@ -61,7 +61,7 @@ export default function Dashboard() {
           current={user.weightKg}
           target={user.goalWeightKg}
           unit="kg"
-          colorClass="text-purple-500"
+          colorClass="text-fuchsia-500"
           icon={<TrendingDown className="h-4 w-4" />}
         />
         <div className="rounded-xl border border-border bg-card p-5 space-y-2 shadow-subtle flex flex-col justify-between">
@@ -72,19 +72,19 @@ export default function Dashboard() {
             label="Proteínas"
             current={consumedProtein}
             target={user.proteinTargetG}
-            color="bg-emerald-500"
+            color="bg-violet-500"
           />
           <MacroBar
             label="Carboidratos"
             current={consumedCarbs}
             target={user.carbsTargetG}
-            color="bg-amber-500"
+            color="bg-purple-400"
           />
           <MacroBar
             label="Gorduras"
             current={consumedFat}
             target={user.fatTargetG}
-            color="bg-rose-500"
+            color="bg-fuchsia-500"
           />
         </div>
       </div>
@@ -94,11 +94,11 @@ export default function Dashboard() {
         <div className="lg:col-span-2 rounded-xl border border-border bg-card p-6 space-y-4">
           <div className="flex items-center justify-between">
             <h2 className="text-base font-bold flex items-center gap-2">
-              <Dumbbell className="h-4 w-4 text-emerald-500" /> Treino Recomendado para Hoje
+              <Dumbbell className="h-4 w-4 text-violet-500" /> Treino Recomendado para Hoje
             </h2>
             <Link
               to="/treinos"
-              className="text-xs text-emerald-500 hover:underline flex items-center gap-1"
+              className="text-xs text-violet-500 hover:underline flex items-center gap-1"
             >
               Ver todos <ArrowUpRight className="h-3 w-3" />
             </Link>
@@ -107,7 +107,7 @@ export default function Dashboard() {
           {activeRoutine ? (
             <div className="p-4 rounded-xl bg-accent/40 border border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
-                <span className="text-xs font-bold text-emerald-500 uppercase tracking-wider">
+                <span className="text-xs font-bold text-violet-500 uppercase tracking-wider">
                   Disponível
                 </span>
                 <h3 className="font-semibold text-lg">{activeRoutine.name}</h3>
@@ -116,7 +116,7 @@ export default function Dashboard() {
                 </p>
               </div>
               <Link to={`/treinos/executar/${activeRoutine.id}`}>
-                <Button className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs gap-2">
+                <Button className="bg-violet-600 hover:bg-violet-700 text-white text-xs gap-2">
                   Iniciar Treino Agora
                 </Button>
               </Link>
@@ -154,7 +154,7 @@ export default function Dashboard() {
       <div className="rounded-xl border border-border bg-card p-6 space-y-4">
         <div className="flex items-center justify-between">
           <h2 className="text-base font-bold">Refeições Registradas Hoje</h2>
-          <Link to="/refeicoes" className="text-xs text-emerald-500 hover:underline">
+          <Link to="/refeicoes" className="text-xs text-violet-500 hover:underline">
             Gerenciar Refeições
           </Link>
         </div>
@@ -174,7 +174,7 @@ export default function Dashboard() {
                     {m.mealCategory} • {m.totalGrams}g
                   </p>
                 </div>
-                <span className="font-bold text-emerald-500">{m.calories} kcal</span>
+                <span className="font-bold text-violet-500">{m.calories} kcal</span>
               </div>
             ))}
           </div>

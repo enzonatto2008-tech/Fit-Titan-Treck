@@ -66,7 +66,7 @@ export default function AiAssistant() {
     <div className="space-y-4 max-w-3xl mx-auto h-[calc(100vh-10rem)] flex flex-col">
       <div>
         <h1 className="text-2xl font-bold tracking-tight flex items-center gap-2">
-          <Sparkles className="h-6 w-6 text-emerald-500" /> AI Fitness Coach
+          <Sparkles className="h-6 w-6 text-violet-500" /> AI Fitness Coach
         </h1>
         <p className="text-xs text-muted-foreground">
           Assistente inteligente integrado com seu histórico e métricas diárias.
@@ -80,21 +80,21 @@ export default function AiAssistant() {
             className={`flex gap-3 text-xs ${m.sender === 'user' ? 'justify-end' : 'justify-start'}`}
           >
             {m.sender === 'ai' && (
-              <div className="h-8 w-8 rounded-full bg-emerald-500/20 text-emerald-500 flex items-center justify-center shrink-0">
+              <div className="h-8 w-8 rounded-full bg-violet-500/20 text-violet-500 flex items-center justify-center shrink-0">
                 <Bot className="h-4 w-4" />
               </div>
             )}
             <div
               className={`p-3 rounded-xl max-w-[80%] ${
                 m.sender === 'user'
-                  ? 'bg-emerald-600 text-white rounded-br-none'
+                  ? 'bg-violet-600 text-white rounded-br-none'
                   : 'bg-accent/60 border border-border rounded-bl-none'
               }`}
             >
               {m.text}
             </div>
             {m.sender === 'user' && (
-              <div className="h-8 w-8 rounded-full bg-emerald-600 text-white flex items-center justify-center shrink-0">
+              <div className="h-8 w-8 rounded-full bg-violet-600 text-white flex items-center justify-center shrink-0">
                 <User className="h-4 w-4" />
               </div>
             )}
@@ -109,7 +109,7 @@ export default function AiAssistant() {
           placeholder="Pergunte sobre sua dieta, treino ou sugestões..."
           className="text-xs"
         />
-        <Button type="submit" className="bg-emerald-600 text-white gap-2 text-xs">
+        <Button type="submit" className="bg-violet-600 text-white gap-2 text-xs">
           <Send className="h-4 w-4" /> Enviar
         </Button>
       </form>

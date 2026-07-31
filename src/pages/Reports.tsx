@@ -16,7 +16,7 @@ export default function Reports() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Card className="p-5 border-border space-y-2">
-          <div className="flex justify-between items-center text-emerald-500">
+          <div className="flex justify-between items-center text-violet-500">
             <span className="text-xs font-semibold uppercase">Evolução do Peso</span>
             <TrendingDown className="h-5 w-5" />
           </div>
@@ -27,7 +27,7 @@ export default function Reports() {
         </Card>
 
         <Card className="p-5 border-border space-y-2">
-          <div className="flex justify-between items-center text-amber-500">
+          <div className="flex justify-between items-center text-purple-500">
             <span className="text-xs font-semibold uppercase">Consumo de Alimentação</span>
             <Flame className="h-5 w-5" />
           </div>
@@ -36,7 +36,7 @@ export default function Reports() {
         </Card>
 
         <Card className="p-5 border-border space-y-2">
-          <div className="flex justify-between items-center text-blue-500">
+          <div className="flex justify-between items-center text-fuchsia-500">
             <span className="text-xs font-semibold uppercase">Média de Hidratação</span>
             <Droplet className="h-5 w-5" />
           </div>
@@ -49,7 +49,7 @@ export default function Reports() {
 
       <Card className="p-6 border-border space-y-4">
         <h2 className="text-base font-bold flex items-center gap-2">
-          <FileText className="h-4 w-4 text-emerald-500" /> Resumo do Plano Metabólico
+          <FileText className="h-4 w-4 text-violet-500" /> Resumo do Plano Metabólico
         </h2>
         <div className="text-xs space-y-2 text-muted-foreground">
           <p>

@@ -4,7 +4,8 @@ import { useFitness } from '@/hooks/use-fitness'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { Flame, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
+import logoImg from '@/assets/d3267126-5516-47b1-a617-7fde37c12841-f18a4.jpeg'
 
 export default function Login() {
   const [email, setEmail] = useState('lucas@fittrack.com')
@@ -21,8 +22,14 @@ export default function Login() {
   return (
     <div className="w-full max-w-md mx-auto space-y-6 bg-card border border-border p-8 rounded-2xl shadow-elevation">
       <div className="text-center space-y-2">
-        <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-500 mb-2">
-          <Flame className="h-7 w-7" />
+        <div className="inline-flex items-center justify-center mb-2">
+          <div className="h-20 w-20 rounded-2xl overflow-hidden bg-black p-1 border border-purple-500/30 shadow-lg flex items-center justify-center">
+            <img
+              src={logoImg}
+              alt="FitTitanTrack Logo"
+              className="h-full w-full object-cover rounded-xl"
+            />
+          </div>
         </div>
         <h1 className="text-2xl font-bold tracking-tight">Entrar no FitTitanTrack</h1>
         <p className="text-xs text-muted-foreground">
@@ -47,7 +54,7 @@ export default function Login() {
 
         <Button
           type="submit"
-          className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 rounded-lg gap-2"
+          className="w-full bg-violet-600 hover:bg-violet-700 text-white font-medium py-2 rounded-lg gap-2"
         >
           Entrar <ArrowRight className="h-4 w-4" />
         </Button>
@@ -55,7 +62,7 @@ export default function Login() {
 
       <div className="text-center text-xs text-muted-foreground pt-4 border-t border-border">
         Não tem uma conta?{' '}
-        <Link to="/register" className="text-emerald-500 font-semibold hover:underline">
+        <Link to="/register" className="text-violet-500 font-semibold hover:underline">
           Cadastre-se gratuitamente
         </Link>
       </div>

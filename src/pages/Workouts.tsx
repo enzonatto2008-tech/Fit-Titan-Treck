@@ -26,12 +26,12 @@ export default function Workouts() {
           >
             <div className="space-y-2">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-bold text-emerald-500 uppercase">Divisão</span>
+                <span className="text-xs font-bold text-violet-500 uppercase">Divisão</span>
                 <Button
                   size="icon"
                   variant="ghost"
                   onClick={() => deleteRoutine(routine.id)}
-                  className="h-6 w-6 text-muted-foreground hover:text-red-500"
+                  className="h-6 w-6 text-muted-foreground hover:text-destructive"
                 >
                   <Trash2 className="h-3.5 w-3.5" />
                 </Button>
@@ -55,7 +55,7 @@ export default function Workouts() {
             </div>
 
             <Link to={`/treinos/executar/${routine.id}`} className="block">
-              <Button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white gap-2 text-xs">
+              <Button className="w-full bg-violet-600 hover:bg-violet-700 text-white gap-2 text-xs">
                 <Play className="h-3.5 w-3.5" /> Iniciar Treino
               </Button>
             </Link>

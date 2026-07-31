@@ -7,12 +7,12 @@ import {
   Target,
   FileText,
   Sparkles,
-  Flame,
   Droplet,
   Moon,
   History,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import logoImg from '@/assets/d3267126-5516-47b1-a617-7fde37c12841-f18a4.jpeg'
 
 const navItems = [
   { label: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
@@ -33,11 +33,13 @@ export function Sidebar() {
       {/* Desktop Sidebar */}
       <aside className="hidden md:flex flex-col w-64 border-r border-border bg-card min-h-screen sticky top-0 shrink-0">
         <div className="p-6 flex items-center gap-3 border-b border-border">
-          <div className="h-10 w-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center text-white shadow-md">
-            <Flame className="h-6 w-6" />
+          <div className="relative h-11 w-11 shrink-0 rounded-xl overflow-hidden bg-black flex items-center justify-center border border-purple-500/30 shadow-md">
+            <img src={logoImg} alt="FitTitanTrack Logo" className="h-full w-full object-cover" />
           </div>
           <div>
-            <h1 className="font-bold text-lg leading-none tracking-tight">FitTitanTrack</h1>
+            <h1 className="font-bold text-lg leading-none tracking-tight text-foreground">
+              FitTitanTrack
+            </h1>
             <p className="text-xs text-muted-foreground mt-1">Evolução Inteligente</p>
           </div>
         </div>
@@ -51,7 +53,7 @@ export function Sidebar() {
                 cn(
                   'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 group relative',
                   isActive
-                    ? 'bg-emerald-500/15 text-emerald-500 font-semibold'
+                    ? 'bg-violet-500/15 text-violet-500 font-semibold'
                     : 'text-muted-foreground hover:bg-accent hover:text-foreground',
                 )
               }
@@ -59,7 +61,7 @@ export function Sidebar() {
               <item.icon className="h-5 w-5 shrink-0" />
               <span>{item.label}</span>
               {item.badge && (
-                <span className="ml-auto text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-500 text-black">
+                <span className="ml-auto text-[10px] font-bold px-1.5 py-0.5 rounded bg-violet-500 text-white">
                   {item.badge}
                 </span>
               )}
@@ -81,7 +83,7 @@ export function Sidebar() {
             className={({ isActive }) =>
               cn(
                 'flex flex-col items-center justify-center py-1 px-2 rounded-lg text-[10px] font-medium transition-colors',
-                isActive ? 'text-emerald-500 font-semibold' : 'text-muted-foreground',
+                isActive ? 'text-violet-500 font-semibold' : 'text-muted-foreground',
               )
             }
           >

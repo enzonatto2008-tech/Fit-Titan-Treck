@@ -59,7 +59,7 @@ export default function Sleep() {
             </div>
           </div>
 
-          <Button type="submit" className="w-full bg-emerald-600 text-white gap-2 text-xs">
+          <Button type="submit" className="w-full bg-violet-600 text-white gap-2 text-xs">
             <Plus className="h-4 w-4" /> Registrar Sono
           </Button>
         </form>
@@ -70,7 +70,7 @@ export default function Sleep() {
         {sleepLogs.map((s) => (
           <Card key={s.id} className="p-3 border-border flex justify-between items-center text-xs">
             <div className="flex items-center gap-2">
-              <Moon className="h-4 w-4 text-purple-400" />
+              <Moon className="h-4 w-4 text-violet-400" />
               <span>{s.date}</span>
             </div>
             <span className="font-bold">

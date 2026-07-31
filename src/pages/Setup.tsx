@@ -166,8 +166,8 @@ export default function Setup() {
         </div>
 
         {/* Calculated Preview */}
-        <div className="mt-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 space-y-3">
-          <div className="flex items-center gap-2 text-emerald-500 font-semibold text-sm">
+        <div className="mt-6 p-4 rounded-xl bg-violet-500/10 border border-violet-500/20 space-y-3">
+          <div className="flex items-center gap-2 text-violet-500 font-semibold text-sm">
             <Sparkles className="h-4 w-4" /> Recomendações Calculadas
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-center text-xs">
@@ -177,7 +177,7 @@ export default function Setup() {
             </div>
             <div className="p-2 bg-card rounded-lg border">
               <span className="text-muted-foreground block text-[10px]">Calorias Diárias</span>
-              <strong className="text-sm font-bold text-emerald-500">{targetCalories} kcal</strong>
+              <strong className="text-sm font-bold text-violet-500">{targetCalories} kcal</strong>
             </div>
             <div className="p-2 bg-card rounded-lg border">
               <span className="text-muted-foreground block text-[10px]">Proteínas</span>
@@ -196,7 +196,7 @@ export default function Setup() {
 
         <Button
           onClick={handleFinish}
-          className="w-full bg-emerald-600 hover:bg-emerald-700 text-white gap-2 mt-4"
+          className="w-full bg-violet-600 hover:bg-violet-700 text-white gap-2 mt-4"
         >
           <CheckCircle className="h-4 w-4" /> Concluir e Ir para o Dashboard
         </Button>

@@ -18,7 +18,7 @@ export function StatCard({
   target,
   unit,
   icon,
-  colorClass = 'text-emerald-500',
+  colorClass = 'text-violet-500',
   progressColor,
 }: StatCardProps) {
   const percent = target > 0 ? Math.min(100, Math.round((current / target) * 100)) : 0
@@ -48,12 +48,12 @@ export function StatCard({
 
       <Progress
         value={percent}
-        className={cn('h-2', isOver && 'bg-red-500/20 [&>div]:bg-red-500', progressColor)}
+        className={cn('h-2', isOver && 'bg-violet-800/20 [&>div]:bg-violet-800', progressColor)}
       />
 
       <div className="mt-2 flex justify-between items-center text-[11px] text-muted-foreground">
         <span>{percent}% concluído</span>
-        {isOver && <span className="text-red-500 font-semibold">Acima da meta</span>}
+        {isOver && <span className="text-violet-800 font-semibold">Acima da meta</span>}
       </div>
     </div>
   )
