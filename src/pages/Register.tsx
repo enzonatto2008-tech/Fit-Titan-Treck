@@ -26,7 +26,7 @@ export default function Register() {
         <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-500 mb-2">
           <Flame className="h-7 w-7" />
         </div>
-        <h1 className="text-2xl font-bold tracking-tight">Criar Conta no FitTrack AI</h1>
+        <h1 className="text-2xl font-bold tracking-tight">Criar Conta no FitTitanTrack</h1>
         <p className="text-xs text-muted-foreground">
           Comece sua jornada de evolução corporal inteligente
         </p>

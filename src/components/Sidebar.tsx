@@ -37,9 +37,7 @@ export function Sidebar() {
             <Flame className="h-6 w-6" />
           </div>
           <div>
-            <h1 className="font-bold text-lg leading-none tracking-tight">
-              FitTrack <span className="text-emerald-500">AI</span>
-            </h1>
+            <h1 className="font-bold text-lg leading-none tracking-tight">FitTitanTrack</h1>
             <p className="text-xs text-muted-foreground mt-1">Evolução Inteligente</p>
           </div>
         </div>
@@ -70,7 +68,7 @@ export function Sidebar() {
         </nav>
 
         <div className="p-4 border-t border-border text-xs text-center text-muted-foreground">
-          FitTrack AI v0.0.1
+          FTT v0.0.1
         </div>
       </aside>
 
