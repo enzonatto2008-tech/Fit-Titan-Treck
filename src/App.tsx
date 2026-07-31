@@ -49,6 +49,10 @@ const App = () => (
             <Route path="/agua" element={<Water />} />
             <Route path="/sono" element={<Sleep />} />
             <Route path="/metas" element={<Goals />} />
+            <Route path="/estatisticas" element={<Statistics />} />
+            <Route path="/receitas" element={<Recipes />} />
+            <Route path="/calculadoras" element={<Calculators />} />
+            <Route path="/exportar" element={<ExportCenter />} />
             <Route path="/relatorios" element={<Reports />} />
             <Route path="/ai" element={<AiAssistant />} />
             <Route path="/configuracoes" element={<Settings />} />
