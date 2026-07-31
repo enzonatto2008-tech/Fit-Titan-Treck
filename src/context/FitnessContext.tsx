@@ -15,6 +15,7 @@ import {
 import { INITIAL_USER, INITIAL_ROUTINES } from '@/data/mock-data'
 import { EXPANDED_FOODS as DEFAULT_FOODS } from '@/data/foods-database'
 import { EXPANDED_EXERCISES as DEFAULT_EXERCISES } from '@/data/exercises-database'
+import { db } from '@/lib/db'
 
 export interface FitnessContextType {
   user: UserProfile
@@ -28,8 +29,11 @@ export interface FitnessContextType {
   waterLogs: WaterLog[]
   sleepLogs: SleepLog[]
   isAuthenticated: boolean
+  dbConnected: boolean
   login: (email: string) => void
   logout: () => void
+  connectDb: (serverUrl: string) => void
+  disconnectDb: () => void
   updateUserProfile: (data: Partial<UserProfile>) => void
   addCustomFood: (food: Omit<FoodItem, 'id'>) => void
   addMealItem: (item: Omit<MealItemLog, 'id'>) => void
@@ -51,6 +55,10 @@ const TODAY = new Date().toISOString().split('T')[0]
 export const FitnessProvider = ({ children }: { children: ReactNode }) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
     return localStorage.getItem('fit_auth') === 'true'
+  })
+
+  const [dbConnected, setDbConnected] = useState<boolean>(() => {
+    return localStorage.getItem('fittrack_db_connected') === 'true'
   })
 
   const [user, setUser] = useState<UserProfile>(() => {
@@ -268,6 +276,16 @@ export const FitnessProvider = ({ children }: { children: ReactNode }) => {
     setIsAuthenticated(false)
   }
 
+  const connectDb = (serverUrl: string) => {
+    db.connect(serverUrl)
+    setDbConnected(true)
+  }
+
+  const disconnectDb = () => {
+    db.disconnect()
+    setDbConnected(false)
+  }
+
   const updateUserProfile = (data: Partial<UserProfile>) => {
     setUser((prev) => ({ ...prev, ...data }))
   }
@@ -352,8 +370,11 @@ export const FitnessProvider = ({ children }: { children: ReactNode }) => {
         waterLogs,
         sleepLogs,
         isAuthenticated,
+        dbConnected,
         login,
         logout,
+        connectDb,
+        disconnectDb,
         updateUserProfile,
         addCustomFood,
         addMealItem,

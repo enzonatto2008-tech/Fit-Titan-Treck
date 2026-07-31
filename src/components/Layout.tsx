@@ -2,10 +2,12 @@ import { Outlet, Navigate, useLocation } from 'react-router-dom'
 import { Sidebar } from '@/components/Sidebar'
 import { Header } from '@/components/Header'
 import { useFitness } from '@/hooks/use-fitness'
+import { useReminderChecker } from '@/hooks/use-reminders'
 
 export default function Layout() {
-  const { isAuthenticated } = useFitness()
+  const { isAuthenticated, dbConnected } = useFitness()
   const location = useLocation()
+  useReminderChecker()
 
   const publicRoutes = ['/login', '/register']
   const isPublicRoute = publicRoutes.includes(location.pathname)
@@ -32,6 +34,12 @@ export default function Layout() {
       <div className="flex-1 flex flex-col min-w-0 pb-16 md:pb-0">
         <Header />
         <main className="flex-1 p-4 md:p-8 max-w-7xl w-full mx-auto animate-fade-in">
+          {!dbConnected && (
+            <div className="mb-4 p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-center text-xs text-amber-600 dark:text-amber-400">
+              ⚠️ Modo temporário — seus dados não serão salvos. Conecte-se ao banco de dados pelo
+              ícone no cabeçalho.
+            </div>
+          )}
           <Outlet />
         </main>
       </div>

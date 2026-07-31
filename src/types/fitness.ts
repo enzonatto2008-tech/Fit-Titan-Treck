@@ -179,3 +179,24 @@ export interface Achievement {
   icon: string
   unlocked: boolean
 }
+
+export type ReminderType = 'water' | 'meal' | 'workout' | 'sleep' | 'weigh_in'
+
+export interface Reminder {
+  id: string
+  type: ReminderType
+  title: string
+  time: string
+  days: number[]
+  enabled: boolean
+  createdAt: string
+  updatedAt: string
+}
+
+export interface AppNotification {
+  id: string
+  title: string
+  body: string
+  timestamp: string
+  read: boolean
+}

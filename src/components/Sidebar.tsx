@@ -15,6 +15,7 @@ import {
   BarChart3,
   Calculator,
   Download,
+  BellRing,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import logoImg from '@/assets/d3267126-5516-47b1-a617-7fde37c12841-f18a4.jpeg'
@@ -29,6 +30,7 @@ const navItems = [
   { label: 'Fotos', path: '/evolucao/fotos', icon: Camera },
   { label: 'Água', path: '/agua', icon: Droplet },
   { label: 'Sono', path: '/sono', icon: Moon },
+  { label: 'Lembretes', path: '/lembretes', icon: BellRing },
   { label: 'Metas', path: '/metas', icon: Target },
   { label: 'Estatísticas', path: '/estatisticas', icon: BarChart3 },
   { label: 'Calculadoras', path: '/calculadoras', icon: Calculator },

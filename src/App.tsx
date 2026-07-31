@@ -25,6 +25,7 @@ import ExportCenter from '@/pages/ExportCenter'
 import Reports from '@/pages/Reports'
 import AiAssistant from '@/pages/AiAssistant'
 import Settings from '@/pages/Settings'
+import Reminders from '@/pages/Reminders'
 import NotFound from '@/pages/NotFound'
 
 const App = () => (
@@ -48,6 +49,7 @@ const App = () => (
             <Route path="/treinos/historico" element={<WorkoutHistory />} />
             <Route path="/agua" element={<Water />} />
             <Route path="/sono" element={<Sleep />} />
+            <Route path="/lembretes" element={<Reminders />} />
             <Route path="/metas" element={<Goals />} />
             <Route path="/estatisticas" element={<Statistics />} />
             <Route path="/receitas" element={<Recipes />} />

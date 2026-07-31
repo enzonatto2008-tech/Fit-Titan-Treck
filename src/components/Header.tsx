@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom'
 import { useFitness } from '@/hooks/use-fitness'
 import { useTheme } from '@/hooks/use-theme'
-import { Moon, Sun, Bell, User, LogOut, Settings, Sparkles } from 'lucide-react'
+import { Moon, Sun, User, LogOut, Settings, Sparkles } from 'lucide-react'
 import logoImg from '@/assets/d3267126-5516-47b1-a617-7fde37c12841-f18a4.jpeg'
 import { Button } from '@/components/ui/button'
+import { ServerConnectionModal } from '@/components/ServerConnectionModal'
+import { NotificationBell } from '@/components/NotificationBell'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -50,6 +52,8 @@ export function Header() {
       </div>
 
       <div className="flex items-center gap-3">
+        <ServerConnectionModal />
+
         <Button variant="ghost" size="icon" onClick={toggleTheme} className="rounded-full">
           {isDark ? (
             <Sun className="h-5 w-5 text-amber-400" />
@@ -58,14 +62,7 @@ export function Header() {
           )}
         </Button>
 
-        <Button
-          variant="ghost"
-          size="icon"
-          className="relative rounded-full text-muted-foreground hover:text-foreground"
-        >
-          <Bell className="h-5 w-5" />
-          <span className="absolute top-2 right-2 h-2 w-2 rounded-full bg-violet-500" />
-        </Button>
+        <NotificationBell />
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
