@@ -1,28 +1,58 @@
-/* Main App Component - Handles routing (using react-router-dom), query client and other providers - use this file to add all routes */
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { Toaster } from '@/components/ui/toaster'
 import { Toaster as Sonner } from '@/components/ui/sonner'
 import { TooltipProvider } from '@/components/ui/tooltip'
-import Index from './pages/Index'
-import NotFound from './pages/NotFound'
-import Layout from './components/Layout'
+import { FitnessProvider } from '@/context/FitnessContext'
 
-// ONLY IMPORT AND RENDER WORKING PAGES, NEVER ADD PLACEHOLDER COMPONENTS OR PAGES IN THIS FILE
-// AVOID REMOVING ANY CONTEXT PROVIDERS FROM THIS FILE (e.g. TooltipProvider, Toaster, Sonner)
+import Layout from '@/components/Layout'
+import Login from '@/pages/Login'
+import Register from '@/pages/Register'
+import Setup from '@/pages/Setup'
+import Dashboard from '@/pages/Dashboard'
+import Meals from '@/pages/Meals'
+import Weight from '@/pages/Weight'
+import Photos from '@/pages/Photos'
+import Workouts from '@/pages/Workouts'
+import WorkoutSession from '@/pages/WorkoutSession'
+import WorkoutHistory from '@/pages/WorkoutHistory'
+import Water from '@/pages/Water'
+import Sleep from '@/pages/Sleep'
+import Goals from '@/pages/Goals'
+import Reports from '@/pages/Reports'
+import AiAssistant from '@/pages/AiAssistant'
+import Settings from '@/pages/Settings'
+import NotFound from '@/pages/NotFound'
 
 const App = () => (
   <BrowserRouter>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES MUST BE ADDED HERE */}
-        </Route>
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </TooltipProvider>
+    <FitnessProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Navigate to="/dashboard" replace />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/setup" element={<Setup />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/refeicoes" element={<Meals />} />
+            <Route path="/evolucao/peso" element={<Weight />} />
+            <Route path="/evolucao/fotos" element={<Photos />} />
+            <Route path="/treinos" element={<Workouts />} />
+            <Route path="/treinos/executar/:routineId" element={<WorkoutSession />} />
+            <Route path="/treinos/historico" element={<WorkoutHistory />} />
+            <Route path="/agua" element={<Water />} />
+            <Route path="/sono" element={<Sleep />} />
+            <Route path="/metas" element={<Goals />} />
+            <Route path="/relatorios" element={<Reports />} />
+            <Route path="/ai" element={<AiAssistant />} />
+            <Route path="/configuracoes" element={<Settings />} />
+          </Route>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </TooltipProvider>
+    </FitnessProvider>
   </BrowserRouter>
 )
 
